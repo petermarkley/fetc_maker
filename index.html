@@ -16,15 +16,8 @@
             <input type="file" id="upload_img" name="upload_img" @change="uploadImg();">
           </div>
           <div>
-            <h3>Size</h3>
-            <div>
-              <label for="img_width">Width</label>
-              <input type="number" id="img_width" v-model="imgWidth"/>
-            </div>
-            <div>
-              <label for="img_height">Height</label>
-              <input type="number" id="img_height" v-model="imgHeight"/>
-            </div>
+            <label for="img_scale">Size</label>
+            <input type="number" id="img_scale" v-model="imgScale"/>
           </div>
           <div>
             <h3>Position</h3>
@@ -150,8 +143,8 @@
               r="0.61994863" />
             <image
               v-if="imgDataUri"
-              width="3.349957"
-              height="4.1699986"
+              :width="imgCanvasWidth"
+              :height="imgCanvasHeight"
               preserveAspectRatio="none"
               :xlink:href="imgDataUri"
               id="image1"
@@ -349,6 +342,7 @@
             imgDataUri: null,
             imgWidth: 0,
             imgHeight: 0,
+            imgScale: 1.0,
             imgTop: 0,
             imgLeft: 0,
             textCorner: "YYYY",
@@ -356,6 +350,14 @@
             textDescription: "Lorem ipsum dolor sit amet",
             textSize: 12,
           };
+        },
+        computed: {
+          imgCanvasWidth() {
+            return this.imgWidth * this.imgScale;
+          },
+          imgCanvasHeight() {
+            return this.imgHeight * this.imgScale;
+          },
         },
         methods: {
           uploadImg() {
@@ -370,12 +372,25 @@
             xhr.responseType = 'blob';
             xhr.onload = () => {
               if (xhr.status === 200) {
-                let reader = new FileReader();
+                const reader = new FileReader();
                 reader.readAsDataURL(xhr.response); 
                 reader.onloadend = () => {
-                  this.imgDataUri = reader.result;                
-                  console.log(this.imgDataUri);
-                }
+                  this.imgDataUri = reader.result;
+                  const img = new Image();
+                  img.src = reader.result;
+                  img.onload = () => {
+                    this.imgWidth = img.width;
+                    this.imgHeight = img.height;
+                    let frameRatio = 2.25/3.25;
+                    let ratio = img.width / img.height;
+                    if (ratio > frameRatio) {
+                      this.imgScale = 3.25 / img.height;
+                    } else {
+                      this.imgScale = 2.25 / img.width;
+                    }
+                  };
+                };
+                console.log(xhr.response);
               } else {
                 console.log("HTTP response "+xhr.status);
               }
