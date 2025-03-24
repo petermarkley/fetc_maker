@@ -22,12 +22,12 @@
           <div>
             <h3>Position</h3>
             <div>
-              <label for="img_top">Top</label>
-              <input type="number" v-model="imgTop"/>
+              <label for="img_x">X</label>
+              <input type="number" v-model="imgX"/>
             </div>
             <div>
-              <label for="img_left">Left</label>
-              <input type="number" v-model="imgLeft"/>
+              <label for="img_y">Y</label>
+              <input type="number" v-model="imgY"/>
             </div>
           </div>
         </div>
@@ -148,8 +148,8 @@
               preserveAspectRatio="none"
               :xlink:href="imgDataUri"
               id="image1"
-              x="-0.50572336"
-              y="-0.7065419"
+              :x="imgLeft"
+              :y="imgTop"
               style="stroke-width:1.19405"
               clip-path="url(#clipPath4)" />
             <path
@@ -343,8 +343,8 @@
             imgWidth: 0,
             imgHeight: 0,
             imgScale: 1.0,
-            imgTop: 0,
-            imgLeft: 0,
+            imgX: 1.25,
+            imgY: 1.75,
             textCorner: "YYYY",
             textHeading: "Untitled",
             textDescription: "Lorem ipsum dolor sit amet",
@@ -357,6 +357,12 @@
           },
           imgCanvasHeight() {
             return this.imgHeight * this.imgScale;
+          },
+          imgTop() {
+            return this.imgY - (this.imgCanvasHeight/2.0);
+          },
+          imgLeft() {
+            return this.imgX - (this.imgCanvasWidth/2.0);
           },
         },
         methods: {
