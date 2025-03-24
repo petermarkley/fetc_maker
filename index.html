@@ -386,7 +386,7 @@
               if (xhr.status === 200) {
                 let reader = new FileReader();
                 reader.readAsDataURL(xhr.response); 
-                reader.onloadend = function() {
+                reader.onloadend = () => {
                   this.imgDataUri = reader.result;                
                   console.log(this.imgDataUri);
                 }
