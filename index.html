@@ -13,7 +13,7 @@
           <h2>Image</h2>
           <div>
             <label for="upload_img">File</label>
-            <input type="file" id="upload_img" name="upload_img">
+            <input type="file" id="upload_img" name="upload_img" @change="uploadImg();">
           </div>
           <div>
             <h3>Size</h3>
@@ -161,17 +161,18 @@
               id="path16"
               cx="0.68013775"
               cy="0.68615675"
-              r="0.61994863" /><!--
+              r="0.61994863" />
             <image
+              v-if="imgDataUri"
               width="3.349957"
               height="4.1699986"
               preserveAspectRatio="none"
-              xlink:href="mugshots/2023.jpg"
+              :xlink:href="imgDataUri"
               id="image1"
               x="-0.50572336"
               y="-0.7065419"
               style="stroke-width:1.19405"
-              clip-path="url(#clipPath4)" />-->
+              clip-path="url(#clipPath4)" />
             <path
               style="fill:none;stroke-linejoin:round;stroke:#ebc767;stroke-opacity:1;stroke-width:0.02;stroke-dasharray:none"
               d="M 1.15625,0.125 A 0.10001,0.10001 0 0 0 1.085938,0.1542969 L 0.15429687,1.0859375 A 0.10001,0.10001 0 0 0 0.125,1.15625 V 3.2753906 A 0.10001,0.10001 0 0 0 0.22460938,3.375 H 2.2753906 A 0.10001,0.10001 0 0 0 2.375,3.2753906 V 0.22460938 A 0.10001,0.10001 0 0 0 2.2753906,0.125 Z"
@@ -371,6 +372,31 @@
           };
         },
         methods: {
+          uploadImg() {
+            let inp = document.getElementById("upload_img");
+            if (inp.files.length < 1) {
+              return;
+            }
+            let file = inp.files[0];
+            let url = URL.createObjectURL(file);
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'blob';
+            xhr.onload = () => {
+              if (xhr.status === 200) {
+                let reader = new FileReader();
+                reader.readAsDataURL(xhr.response); 
+                reader.onloadend = function() {
+                  this.imgDataUri = reader.result;                
+                  console.log(this.imgDataUri);
+                }
+              } else {
+                console.log("HTTP response "+xhr.status);
+              }
+              URL.revokeObjectURL(url);
+            };
+            xhr.send();
+          },
           downloadSvg() {
             let svg = document.getElementById("svg1");
             let anchor = document.createElement('a');
