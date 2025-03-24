@@ -357,6 +357,7 @@
             </g>-->
           </g>
         </svg>
+        <button @click="downloadSvg();">Download SVG</button>
       </div>
     </div>
     <script type="module">
@@ -375,6 +376,18 @@
             textDescription: "Lorem ipsum dolor sit amet",
             textSize: 12,
           };
+        },
+        methods: {
+          downloadSvg() {
+            let svg = document.getElementById("svg1");
+            let anchor = document.createElement('a');
+            anchor.setAttribute('href', 'data:image/svg+xml,' + encodeURIComponent(svg.outerHTML));
+            anchor.setAttribute('download', "card.svg");
+            anchor.style.display = 'none';
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+          },
         },
       });
       
