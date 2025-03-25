@@ -8,6 +8,7 @@
   <body class="bg-gray-200 flex items-center justify-center p-10">
     <div id="app" class="flex flex-col gap-4">
       <h1 class="font-bold text-3xl text-center">Flat Earth Trading Card Maker</h1>
+      <p class="text-center">This is a little widget to help you make your own <a href="https://www.flerf.info/index.php/Category:Trading_Cards" class="underline font-bold text-gray-700">Flat Earth Trading Cards</a>!</p>
       <main class="flex flex-col gap-4 lg:flex-row">
         <div class="bg-white p-4 rounded shadow flex flex-col gap-4">
           <div class="flex flex-col gap-2">
@@ -337,7 +338,7 @@
           <button @click="downloadSvg();" class="bg-gray-700 text-white font-bold p-4 rounded shadow cursor-pointer">Download SVG</button>
         </div>
       </main>
-      <footer class="text-center">Copyright &copy; 2025 Peter Markley.</footer>
+      <footer class="text-center">Copyright &copy; 2025 Peter Markley.<br>Code published <a href="https://github.com/petermarkley/fetc_maker" class="underline font-bold text-gray-700">on Github</a> under the <a href="https://www.gnu.org/licenses/lgpl-2.1.en.html" class="underline font-bold text-gray-700">GNU Lesser General Public License v2.1</a>.</footer>
     </div>
     <script type="module">
       import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js'
