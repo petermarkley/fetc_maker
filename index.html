@@ -127,6 +127,17 @@
                 </div>
               </div>
             </div>
+          <div class="flex flex-col gap-2">
+            <h2 class="text-center font-bold">Hashtags</h2>
+            <div class="flex flex-col gap-1 items-start">
+              <label for="text_hashtag_one">One</label>
+              <input type="text" id="text_hashtag_one" v-model="textHashtagOne" class="border rounded p-2 bg-gray-50 border-gray-400 w-full"/>
+            </div>
+            <div class="flex flex-col gap-1 items-start">
+              <label for="text_hashtag_two">Two</label>
+              <input type="text" id="text_hashtag_two" v-model="textHashtagTwo" class="border rounded p-2 bg-gray-50 border-gray-400 w-full"/>
+            </div>
+          </div>
           </div>
         </div>
         <div class="flex flex-col items-center gap-4 w-full">
@@ -360,23 +371,24 @@
                 style="fill:none;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
                 d="M 0.11150963,3.4638451 C 0.73773192,3.0129977 1.2616624,2.7340868 1.8700339,2.6486942"
                 id="path18"
-                sodipodi:nodetypes="cc" /><!--
+                sodipodi:nodetypes="cc" />
               <g
+                v-if="textHashtagOne"
                 id="g5"
                 transform="translate(0.5988822,0.05417025)">
                 <rect
                   style="fill:#ffffff;fill-opacity:1;stroke-width:0.05;stroke-linejoin:round"
                   id="rect5"
-                  width="0.89079994"
+                  :width="textHashtagOneWidth"
                   height="0.21066216"
-                  x="0.44794047"
+                  :x="textHashtagOneLeft"
                   y="2.8583786"
                   rx="0.027085125"
                   ry="0.027085125" />
                 <text
                   xml:space="preserve"
-                  style="font-size:0.142058px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;letter-spacing:-0.00710288px;text-anchor:middle;stroke-width:0.0104167"
-                  x="0.8687709"
+                  style="font-size:0.12px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;letter-spacing:-0.00710288px;text-anchor:middle;stroke-width:0.0104167"
+                  x="0.95"
                   y="3.0776303"
                   id="text5"
                   transform="scale(1.0259054,0.97474874)">
@@ -384,26 +396,27 @@
                     sodipodi:role="line"
                     id="tspan5"
                     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Clear Sans';-inkscape-font-specification:'Clear Sans Bold';letter-spacing:-0.00710288px;stroke-width:0.0104167"
-                    x="0.86521947"
-                    y="3.0776303">#WitsitSpitsit</tspan>
+                    x="0.95"
+                    y="3.0776303">#{{ textHashtagOne }}</tspan>
                 </text>
               </g>
               <g
+                v-if="textHashtagTwo"
                 id="g7"
                 transform="translate(0.08426483,0.2738607)">
                 <rect
                   style="fill:#ffffff;fill-opacity:1;stroke-width:0.05;stroke-linejoin:round"
                   id="rect6"
-                  width="0.67110944"
+                  :width="textHashtagTwoWidth"
                   height="0.21066213"
-                  x="0.55929041"
+                  :x="textHashtagTwoLeft"
                   y="2.8583786"
                   rx="0.027085125"
                   ry="0.027085125" />
                 <text
                   xml:space="preserve"
-                  style="font-size:0.142058px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;letter-spacing:-0.00710288px;text-anchor:middle;stroke-width:0.0104167"
-                  x="0.8687709"
+                  style="font-size:0.12px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;letter-spacing:-0.00710288px;text-anchor:middle;stroke-width:0.0104167"
+                  x="0.95"
                   y="3.0776303"
                   id="text7"
                   transform="scale(1.0259054,0.97474874)">
@@ -411,8 +424,8 @@
                     sodipodi:role="line"
                     id="tspan7"
                     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Clear Sans';-inkscape-font-specification:'Clear Sans Bold';letter-spacing:-0.00710288px;stroke-width:0.0104167"
-                    x="0.86521947"
-                    y="3.0776303">#Spitgate</tspan>
+                    x="0.95"
+                    y="3.0776303">#{{ textHashtagTwo }}</tspan>
                 </text>
               </g>-->
             </g>
@@ -497,6 +510,8 @@
                 fade: '#a39385',
               },
             },
+            textHashtagOne: '',
+            textHashtagTwo: '',
           };
         },
         computed: {
@@ -520,6 +535,18 @@
           },
           backgroundColor() {
             return this.backgroundColorArray[this.backgroundColorSelection];
+          },
+          textHashtagOneWidth() {
+            return this.textHashtagOne.length * 0.05 + 0.25;
+          },
+          textHashtagOneLeft() {
+            return 0.98 - (this.textHashtagOneWidth/2.0);
+          },
+          textHashtagTwoWidth() {
+            return this.textHashtagTwo.length * 0.05 + 0.25;
+          },
+          textHashtagTwoLeft() {
+            return 0.98 - (this.textHashtagTwoWidth/2.0);
           },
         },
         methods: {
