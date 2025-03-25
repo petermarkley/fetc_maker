@@ -114,6 +114,19 @@
                 </div>
               </div>
             </div>
+            <div class="flex flex-col gap-1 items-start">
+              <h3>Background</h3>
+              <div class="flex flex-row gap-2 items-start flex-wrap">
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="background_color_silver" name="background_color" v-model="backgroundColorSelection" value="silver" class="cursor-pointer"/>
+                  <label for="background_color_silver" title="Silver" class="text-gray-500 bg-gray-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Silver</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="background_color_tan" name="background_color" v-model="backgroundColorSelection" value="tan" class="cursor-pointer"/>
+                  <label for="background_color_tan" title="Tan" class="text-orange-300 bg-orange-300 block w-6 h-6 rounded overflow-hidden cursor-pointer">Tan</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="flex flex-col items-center gap-4 w-full">
@@ -135,8 +148,8 @@
             class="w-full h-auto">
             <defs id="defs1">
               <linearGradient id="linearGradient16" inkscape:collect="always">
-                <stop style="stop-color:#8999a3;stop-opacity:1;" offset="0" id="stop16" />
-                <stop style="stop-color:#8999a3;stop-opacity:0;" offset="1" id="stop17" />
+                <stop :style="&quot;stop-color:&quot; + backgroundColor.fade + &quot;;stop-opacity:1;&quot;" offset="0" id="stop16" />
+                <stop :style="&quot;stop-color:&quot; + backgroundColor.fade + &quot;;stop-opacity:0;&quot;" offset="1" id="stop17" />
               </linearGradient>
               <filter
                 inkscape:collect="always"
@@ -197,7 +210,7 @@
             </defs>
             <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
               <rect
-                style="fill:#cedbe3;fill-opacity:1;stroke:#acb2b7;stroke-width:0.02;stroke-linejoin:round;stroke-opacity:1;stroke-dasharray:none"
+                :style="&quot;fill:&quot; + backgroundColor.fill + &quot;;fill-opacity:1;stroke:&quot; + backgroundColor.border + &quot;;stroke-width:0.02;stroke-linejoin:round;stroke-opacity:1;stroke-dasharray:none&quot;"
                 id="rect1"
                 width="2.48"
                 height="3.48"
@@ -471,6 +484,19 @@
               green: '#427634',
               blue: '#2f6ea0',
             },
+            backgroundColorSelection: 'silver',
+            backgroundColorArray: {
+              silver: {
+                fill: '#cedbe3',
+                border: '#acb2b7',
+                fade: '#8999a3',
+              },
+              tan: {
+                fill: '#e3d7ce',
+                border: '#b7aca3',
+                fade: '#a39385',
+              },
+            },
           };
         },
         computed: {
@@ -491,6 +517,9 @@
           },
           imgBorderColor() {
             return this.imgBorderColorArray[this.imgBorderColorSelection];
+          },
+          backgroundColor() {
+            return this.backgroundColorArray[this.backgroundColorSelection];
           },
         },
         methods: {
