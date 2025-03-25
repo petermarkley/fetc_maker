@@ -61,17 +61,36 @@
           <div class="flex flex-col gap-2">
             <h2 class="text-center font-bold">Colors</h2>
             <div class="flex flex-col gap-1 items-start">
-              <div class="flex flex-row gap-1">
-                <input type="radio" id="swoosh_color_red" name="swoosh_color" v-model="swooshColorSelection" value="red" class="cursor-pointer"/>
-                <label for="swoosh_color_red" class="text-red-500 bg-red-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Red</label>
-              </div>
-              <div class="flex flex-row gap-1">
-                <input type="radio" id="swoosh_color_orange" name="swoosh_color" v-model="swooshColorSelection" value="orange" class="cursor-pointer"/>
-                <label for="swoosh_color_orange" class="text-orange-500 bg-orange-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Orange</label>
-              </div>
-              <div class="flex flex-row gap-1">
-                <input type="radio" id="swoosh_color_blue" name="swoosh_color" v-model="swooshColorSelection" value="blue" class="cursor-pointer"/>
-                <label for="swoosh_color_blue" class="text-sky-500 bg-sky-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Blue</label>
+              <h3>Swoosh</h3>
+              <div class="flex flex-row gap-2 items-start flex-wrap">
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_red" name="swoosh_color" v-model="swooshColorSelection" value="red" class="cursor-pointer"/>
+                  <label for="swoosh_color_red" title="Red" class="text-red-500 bg-red-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Red</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_orange" name="swoosh_color" v-model="swooshColorSelection" value="orange" class="cursor-pointer"/>
+                  <label for="swoosh_color_orange" title="Orange" class="text-orange-500 bg-orange-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Orange</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_gold" name="swoosh_color" v-model="swooshColorSelection" value="gold" class="cursor-pointer"/>
+                  <label for="swoosh_color_gold" title="Gold" class="text-yellow-500 bg-yellow-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Gold</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_green" name="swoosh_color" v-model="swooshColorSelection" value="green" class="cursor-pointer"/>
+                  <label for="swoosh_color_green" title="Green" class="text-green-500 bg-green-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Green</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_blue" name="swoosh_color" v-model="swooshColorSelection" value="blue" class="cursor-pointer"/>
+                  <label for="swoosh_color_blue" title="Blue" class="text-sky-500 bg-sky-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Blue</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_purple" name="swoosh_color" v-model="swooshColorSelection" value="purple" class="cursor-pointer"/>
+                  <label for="swoosh_color_purple" title="Purple" class="text-purple-500 bg-purple-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Purple</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_silver" name="swoosh_color" v-model="swooshColorSelection" value="silver" class="cursor-pointer"/>
+                  <label for="swoosh_color_silver" title="Silver" class="text-gray-500 bg-gray-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Silver</label>
+                </div>
               </div>
             </div>
           </div>
@@ -398,10 +417,30 @@
                 light: '#ffb66d',
                 border: '#ffc067',
               },
+              gold: {
+                dark: '#a3851b',
+                light: '#fff06d',
+                border: '#fff367',
+              },
+              green: {
+                dark: '#4f9b44',
+                light: '#80ff6d',
+                border: '#92ff67',
+              },
               blue: {
                 dark: '#4d92cd',
                 light: '#a8f7ff',
                 border: '#aef6ff',
+              },
+              purple: {
+                dark: '#aa549c',
+                light: '#ec82d8',
+                border: '#ff67e0',
+              },
+              silver: {
+                dark: '#7e8490',
+                light: '#d7dfec',
+                border: '#aeb6c6',
               },
             },
           };
