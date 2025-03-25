@@ -46,8 +46,16 @@
               <input type="text" id="text_heading" v-model="textHeading" class="border rounded p-2 bg-gray-50 border-gray-400 w-full"/>
             </div>
             <div class="flex flex-col gap-1 items-start">
+              <label for="text_heading_size">Heading font size</label>
+              <input type="number" id="text_heading_size" v-model="textHeadingSize" class="border rounded p-2 bg-gray-50 border-gray-400 w-full text-right"/>
+            </div>
+            <div class="flex flex-col gap-1 items-start">
               <label for="text_description">Description</label>
               <input type="text" id="text_description" v-model="textDescription" class="border rounded p-2 bg-gray-50 border-gray-400 w-full"/>
+            </div>
+            <div class="flex flex-col gap-1 items-start">
+              <label for="text_description_size">Description font size</label>
+              <input type="number" id="text_description_size" v-model="textDescriptionSize" class="border rounded p-2 bg-gray-50 border-gray-400 w-full text-right"/>
             </div>
           </div>
         </div>
@@ -245,29 +253,33 @@
                 sodipodi:nodetypes="cc" />
               <text
                 xml:space="preserve"
-                style="font-size:0.25px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;text-anchor:middle;stroke-width:0.05;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none;stroke-linejoin:round;filter:url(#filter16)"
+                :style="&quot;font-size:&quot; + textHeadingSize + &quot;px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;text-anchor:middle;stroke-width:0.05;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none;stroke-linejoin:round;filter:url(#filter16)&quot;"
                 id="text16">
                 <textPath
                   xlink:href="#path15"
                   startOffset="50%"
                   id="textPath16">
-                  <tspan id="tspan16" style="font-size:0.25px;stroke-width:0.05;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none;stroke-linejoin:round">{{ textHeading }}</tspan>
+                  <tspan
+                    id="tspan16"
+                    :style="&quot;font-size:&quot; + textHeadingSize + &quot;px;stroke-width:0.05;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none;stroke-linejoin:round&quot;">{{ textHeading }}</tspan>
                 </textPath>
               </text>
               <text
                 xml:space="preserve"
-                style="font-size:0.25px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;text-anchor:middle;stroke-width:0.0104167"
+                :style="&quot;font-size:&quot; + textHeadingSize + &quot;px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;text-anchor:middle;stroke-width:0.0104167&quot;"
                 id="text15">
                 <textPath
                   xlink:href="#path15"
                   startOffset="50%"
                   id="textPath15">
-                  <tspan id="tspan15" style="font-size:0.25px;stroke-width:0.0104167">{{ textHeading }}</tspan>
+                  <tspan
+                    id="tspan15"
+                    style="&quot;font-size:&quot; + textHeadingSize + &quot;px;stroke-width:0.0104167&quot;">{{ textHeading }}</tspan>
                 </textPath>
               </text>
               <text
                 xml:space="preserve"
-                style="font-size:0.166667px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;text-anchor:middle;stroke-width:0.0104167"
+                :style="&quot;font-size:&quot; + textDescriptionSize + &quot;px;line-height:1.25;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';text-align:center;text-anchor:middle;stroke-width:0.0104167&quot;"
                 id="text18">
                 <textPath
                   xlink:href="#path18"
@@ -346,16 +358,17 @@
       const app = createApp({
         data() {
           return {
-            imgDataUri: null,
-            imgWidth: 0,
-            imgHeight: 0,
-            imgScale: 1.0,
+            imgDataUri: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDACEXGR0ZFSEdGx0lIyEoMlM2Mi4uMmZJTTxTeWp/fXdqdHKFlr+ihY21kHJ0puOotcbM1tjWgaDr/OnQ+r/S1s7/2wBDASMlJTIsMmI2NmLOiXSJzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7/wgARCAA2ADIDAREAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAEDBAUC/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAG0gKgBgEAHNMYBAVLa69poIxQGfdNZZLdyJl22Jatdy3UlZZjWyW8pLGlICXHo0ki3JchCP//EACAQAAEDBAIDAAAAAAAAAAAAAAEAAhEDECAhEjETMDL/2gAIAQEAAQUC9UhTjVcoTZnB/ab3byvXN0E7nVPq82YNgQjgPmi4k3//xAAZEQADAAMAAAAAAAAAAAAAAAABESAQMED/2gAIAQMBAT8B6TCyYe3/xAAWEQEBAQAAAAAAAAAAAAAAAAABIFD/2gAIAQIBAT8Bxm2P/8QAGxAAAAcBAAAAAAAAAAAAAAAAAAERICEwMRD/2gAIAQEABj8Cq1yUQCjuibzCM//EAB8QAQACAwACAwEAAAAAAAAAAAEAERAhMSBRMEFhcf/aAAgBAQABPyH4kOiAePiw0YKrjOkPDZ/2U1D6dZYeFC+5ZFyD3Fr6cVpfU5lREShUGsXqoTb8JeNaO4eY/9oADAMBAAIAAwAAABBKSAJKARILQJeIG/8A3/r6Iczhv//EABsRAQACAwEBAAAAAAAAAAAAAAEAIBARMSFA/9oACAEDAQE/EPgOQI1TzHFCFm4qmbwXMf/EABsRAAICAwEAAAAAAAAAAAAAAAABESAQIUBB/9oACAECAQE/EOBK6xG8wjRBFYsQj0WKf//EACEQAQACAgEFAAMAAAAAAAAAAAEAESExQRAgcYGRMPDx/9oACAEBAAE/EPxaQe5oh7TDDGY1JahsvuaF77CsXLhKcBQcxqci446obw8BAkiGhVRrLuoVIYdssLFWGVZCINQbwKS6SWbQ8wvB3KUOpmRQUrUGPio/P7MInK3E/fkZCiw0ToSPc//Z",
+            imgWidth: 50,
+            imgHeight: 54,
+            imgScale: 0.060185185,
             imgX: 1.25,
             imgY: 1.75,
             textCorner: "YYYY",
             textHeading: "Untitled",
             textDescription: "Lorem ipsum dolor",
-            textSize: 12,
+            textHeadingSize: 0.25,
+            textDescriptionSize: 0.166667,
           };
         },
         computed: {
