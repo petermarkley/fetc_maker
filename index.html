@@ -58,6 +58,19 @@
               <input type="number" id="text_description_size" v-model="textDescriptionSize" class="border rounded p-2 bg-gray-50 border-gray-400 w-full text-right"/>
             </div>
           </div>
+          <div class="flex flex-col gap-2">
+            <h2 class="text-center font-bold">Colors</h2>
+            <div class="flex flex-col gap-1 items-start">
+              <div class="flex flex-row gap-1">
+                <input type="radio" id="swoosh_color_red" name="swoosh_color" v-model="swooshColorSelection" value="red"/>
+                <label for="swoosh_color_red">Red</label>
+              </div>
+              <div class="flex flex-row gap-1">
+                <input type="radio" id="swoosh_color_blue" name="swoosh_color" v-model="swooshColorSelection" value="blue"/>
+                <label for="swoosh_color_blue">Blue</label>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="flex flex-col items-center gap-4 w-full">
           <svg
@@ -206,16 +219,16 @@
                   d="m 2.1292918,2.2713413 a 0.28138444,0.28138444 0 0 0 -0.2457276,0.145752 c -1.05652154,0.01235 -2.27921546,0.7405395 -2.27921546,0.7405395 l 0.006022,0.5868531 0.71624755,-0.030111 c 0,0 0.59842709,-0.7451713 1.57928471,-0.9917196 A 0.28138444,0.28138444 0 0 0 2.1292918,2.8341058 0.28138444,0.28138444 0 0 0 2.4106638,2.5527337 0.28138444,0.28138444 0 0 0 2.1292918,2.2713413 Z" />
                 <g id="g11" style="filter:url(#filter11)">
                   <path
-                    style="fill:#4d92cd;stroke:#aef6ff;stroke-width:0.02;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1"
+                    :style="&quot;fill:&quot; + swooshColor.dark + &quot;;stroke:&quot; + swooshColor.border + &quot;;stroke-width:0.02;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1&quot;"
                     d="m 1.9681863,2.3503876 c -1.07437692,-0.027085 -2.36242548,0.740327 -2.36242548,0.740327 l 0.006019,0.5868446 0.71625131,-0.030095 c 0,0 0.63800536,-0.7944972 1.67626887,-1.0141878 0.021066,-0.099312 0.05417,-0.1865865 -0.036114,-0.2828888 z"
                     id="path9" />
                   <path
-                    style="fill:#a8f7ff;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.72669828"
+                    :style="&quot;fill:&quot; + swooshColor.light + &quot;;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.72669828&quot;"
                     d="m 1.920035,2.4015485 c -0.7914878,0.051161 -1.51074854,0.400258 -2.28718903,0.9269134 0.003009,0.039123 0.003009,0.3159932 0.003009,0.3159932 l 0.26483241,-0.018057 c 0,0 0.96904583,-0.8637149 2.04041332,-1.0743771 0.00301,-0.05417 -0.021066,-0.1504729 -0.021066,-0.1504725 z"
                     id="path10"
                     sodipodi:nodetypes="cccccc" />
                   <path
-                    style="fill:#a8f7ff;fill-opacity:0.72669828;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                    :style="&quot;fill:&quot; + swooshColor.light + &quot;;fill-opacity:0.72669828;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;"
                     d="m 1.9561485,2.4948417 c -0.7012041,0.084265 -1.54385258,0.5025796 -2.32932145,1.0864147 0.003009,0.039123 0.009028,0.063199 0.009028,0.063199 l 0.47850395,-0.015048 c 0,0 0.77944996,-0.8336204 1.85081748,-1.0442826 0.00301,-0.05417 2e-7,-0.069218 -0.00903,-0.090283 z"
                     id="path11"
                     sodipodi:nodetypes="cccccc" />
@@ -369,6 +382,19 @@
             textDescription: "Lorem ipsum dolor",
             textHeadingSize: 0.25,
             textDescriptionSize: 0.166667,
+            swooshColorSelection: 'red',
+            swooshColorArray: {
+              red: {
+                dark: '#cd4d4d',
+                light: '#ffb6ae',
+                border: '#ffb4a8',
+              },
+              blue: {
+                dark: '#4d92cd',
+                light: '#a8f7ff',
+                border: '#aef6ff',
+              },
+            },
           };
         },
         computed: {
@@ -383,6 +409,9 @@
           },
           imgLeft() {
             return this.imgX - (this.imgCanvasWidth/2.0);
+          },
+          swooshColor() {
+            return this.swooshColorArray[this.swooshColorSelection];
           },
         },
         methods: {
