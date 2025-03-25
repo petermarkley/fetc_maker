@@ -91,6 +91,10 @@
                   <input type="radio" id="swoosh_color_silver" name="swoosh_color" v-model="swooshColorSelection" value="silver" class="cursor-pointer"/>
                   <label for="swoosh_color_silver" title="Silver" class="text-gray-500 bg-gray-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Silver</label>
                 </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="swoosh_color_rainbow" name="swoosh_color" v-model="swooshColorSelection" value="rainbow" class="cursor-pointer"/>
+                  <label for="swoosh_color_rainbow" title="Rainbow" class="block w-6 h-6 rounded overflow-hidden cursor-pointer" style="font-size:0.1px;background-image:linear-gradient(to bottom right, red,orange,yellow,#00cc00,#0088ff,fuchsia);">Rainbow</label>
+                </div>
               </div>
             </div>
             <div class="flex flex-col gap-1 items-start">
@@ -346,7 +350,71 @@
                   id="path9-6"
                   style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.02;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter11);opacity:0.50510409"
                   d="m 2.1292918,2.2713413 a 0.28138444,0.28138444 0 0 0 -0.2457276,0.145752 c -1.05652154,0.01235 -2.27921546,0.7405395 -2.27921546,0.7405395 l 0.006022,0.5868531 0.71624755,-0.030111 c 0,0 0.59842709,-0.7451713 1.57928471,-0.9917196 A 0.28138444,0.28138444 0 0 0 2.1292918,2.8341058 0.28138444,0.28138444 0 0 0 2.4106638,2.5527337 0.28138444,0.28138444 0 0 0 2.1292918,2.2713413 Z" />
-                <g id="g11" style="filter:url(#filter11)">
+                <g v-if="swooshColorSelection=='rainbow'" id="g11" style="filter:url(#filter11)">
+                  <path
+                    style="fill:#cd4d4d;fill-opacity:1;stroke:#cd4d4d;stroke-width:0.02px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 1.9681863,2.3503876 c -1.07437692,-0.027085 -2.36242548,0.740327 -2.36242548,0.740327 l 0.006019,0.5868446 C 0.11461928,3.2595471 1.0426368,2.6613706 1.9521131,2.5149861 1.9731791,2.4156741 2.05847,2.4466899 1.9681863,2.3503876 Z"
+                    id="path9"
+                    sodipodi:nodetypes="ccccc" />
+                  <g id="g4">
+                    <path
+                      style="fill:#bb6ddc;fill-opacity:1;stroke:#bb6ddc;stroke-width:0.02px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                      d="M 1.9925402,2.5034691 C 1.1443064,2.4972589 0.08117302,3.1388722 -0.38822018,3.6775592 l 0.71625131,-0.030095 c 0,0 0.63800536,-0.7944972 1.67626887,-1.0141878 z"
+                      id="path2"
+                      sodipodi:nodetypes="ccccc" />
+                    <path
+                      style="fill:#80ceff;fill-opacity:1;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="m 1.9561485,2.4948417 c -0.7012041,0.084265 -1.54385258,0.5025796 -2.32932145,1.0864147 0.003009,0.039123 0.009028,0.063199 0.009028,0.063199 L 0.170025,3.6050535 c 0,0 0.890782,-0.8614534 1.7951515,-1.0199287 0.00301,-0.05417 2e-7,-0.069218 -0.00903,-0.090283 z"
+                      id="path11"
+                      sodipodi:nodetypes="ccccccc" />
+                    <path
+                      style="fill:#baf5b9;fill-opacity:1;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="M 1.9235141,2.4606936 C 1.1563802,2.5640415 0.42320296,2.9757628 -0.35323753,3.5024182 l -0.0109075,0.1420369 0.26483241,-0.018057 c 0,0 0.96904583,-0.8637149 2.04041332,-1.0743771 z"
+                      id="path3"
+                      sodipodi:nodetypes="cccccc" />
+                    <path
+                      style="fill:#f5f4b9;fill-opacity:1;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="m 1.920035,2.4015485 c -0.7914878,0.051161 -1.51074854,0.400258 -2.28718903,0.9269134 0.003009,0.039123 0.0378003,0.3403471 0.0378003,0.3403471 0.35198825,-0.3361722 1.12856261,-1.0008152 2.24610058,-1.1863705 0.00301,-0.05417 0.00329,-0.08089 0.00329,-0.08089 z"
+                      id="path10"
+                      sodipodi:nodetypes="ccccc" />
+                    <path
+                      style="fill:#f5bd7d;fill-opacity:1;stroke:none;stroke-width:0.0104167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="m 1.920035,2.387632 c -0.7219053,0.05464 -1.52814417,0.3585084 -2.28718903,0.8921221 0.003009,0.039123 0.009967,0.2011821 0.009967,0.2011821 C 0.11309178,3.1204102 0.95576952,2.5705783 1.9167468,2.4441681 Z"
+                      id="path4"
+                      sodipodi:nodetypes="ccccc" />
+                  </g>
+                  <g
+                    id="g17"
+                    transform="matrix(1.0041121,0.01936118,-0.01944444,0.99981255,0.03317207,-0.05670789)"
+                    style="opacity:0.507553;stroke-width:0.997857">
+                    <path
+                      style="fill:#bb6ddc;fill-opacity:1;stroke:#bb6ddc;stroke-width:0.0199571px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                      d="M 1.9925402,2.5034691 C 1.1443064,2.4972589 0.08117302,3.1388722 -0.38822018,3.6775592 l 0.71625131,-0.030095 c 0,0 0.63800536,-0.7944972 1.67626887,-1.0141878 z"
+                      id="path7"
+                      sodipodi:nodetypes="ccccc" />
+                    <path
+                      style="fill:#80ceff;fill-opacity:1;stroke:none;stroke-width:0.0103944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="m 1.9561485,2.4948417 c -0.7012041,0.084265 -1.54385258,0.5025796 -2.32932145,1.0864147 0.003009,0.039123 0.009028,0.063199 0.009028,0.063199 L 0.170025,3.6050535 c 0,0 0.890782,-0.8614534 1.7951515,-1.0199287 0.00301,-0.05417 2e-7,-0.069218 -0.00903,-0.090283 z"
+                      id="path12"
+                      sodipodi:nodetypes="ccccccc" />
+                    <path
+                      style="fill:#baf5b9;fill-opacity:1;stroke:none;stroke-width:0.0103944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="M 1.9235141,2.4606936 C 1.1563802,2.5640415 0.42320296,2.9757628 -0.35323753,3.5024182 l -0.0109075,0.1420369 0.26483241,-0.018057 c 0,0 0.96904583,-0.8637149 2.04041332,-1.0743771 z"
+                      id="path13"
+                      sodipodi:nodetypes="cccccc" />
+                    <path
+                      style="fill:#f5f4b9;fill-opacity:1;stroke:none;stroke-width:0.0103944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="m 1.920035,2.4015485 c -0.7914878,0.051161 -1.51074854,0.400258 -2.28718903,0.9269134 0.003009,0.039123 0.0378003,0.3403471 0.0378003,0.3403471 0.35198825,-0.3361722 1.12856261,-1.0008152 2.24610053,-1.1863705 0.00301,-0.05417 0.00329,-0.08089 0.00329,-0.08089 z"
+                      id="path14"
+                      sodipodi:nodetypes="ccccc" />
+                    <path
+                      style="fill:#f5bd7d;fill-opacity:1;stroke:none;stroke-width:0.0103944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                      d="m 1.920035,2.387632 c -0.7219053,0.05464 -1.52814417,0.3585084 -2.28718903,0.8921221 0.003009,0.039123 0.009967,0.2011821 0.009967,0.2011821 C 0.11309178,3.1204102 0.95576952,2.5705783 1.9167468,2.4441681 Z"
+                      id="path17"
+                      sodipodi:nodetypes="ccccc" />
+                  </g>
+                </g>
+                <g v-else id="g11" style="filter:url(#filter11)">
                   <path
                     :style="&quot;fill:&quot; + swooshColor.dark + &quot;;stroke:&quot; + swooshColor.border + &quot;;stroke-width:0.02;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1&quot;"
                     d="m 1.9681863,2.3503876 c -1.07437692,-0.027085 -2.36242548,0.740327 -2.36242548,0.740327 l 0.006019,0.5868446 0.71625131,-0.030095 c 0,0 0.63800536,-0.7944972 1.67626887,-1.0141878 0.021066,-0.099312 0.05417,-0.1865865 -0.036114,-0.2828888 z"
@@ -675,6 +743,12 @@
                 dark: '#7e8490',
                 light: '#d7dfec',
                 border: '#aeb6c6',
+              },
+              //this is a special color name; this placeholder palette will not be used
+              rainbow: {
+                dark: '#000000',
+                light: '#ffffff',
+                border: '#888888',
               },
             },
             imgBorderColorSelection: 'gold',
