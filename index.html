@@ -93,6 +93,27 @@
                 </div>
               </div>
             </div>
+            <div class="flex flex-col gap-1 items-start">
+              <h3>Image border</h3>
+              <div class="flex flex-row gap-2 items-start flex-wrap">
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="img_border_color_black" name="img_border_color" v-model="imgBorderColorSelection" value="black" class="cursor-pointer"/>
+                  <label for="img_border_color_black" title="Red" class="text-black bg-black block w-6 h-6 rounded overflow-hidden cursor-pointer">Black</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="img_border_color_gold" name="img_border_color" v-model="imgBorderColorSelection" value="gold" class="cursor-pointer"/>
+                  <label for="img_border_color_gold" title="Gold" class="text-yellow-500 bg-yellow-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Gold</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="img_border_color_green" name="img_border_color" v-model="imgBorderColorSelection" value="green" class="cursor-pointer"/>
+                  <label for="img_border_color_green" title="Green" class="text-green-500 bg-green-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Green</label>
+                </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="img_border_color_blue" name="img_border_color" v-model="imgBorderColorSelection" value="blue" class="cursor-pointer"/>
+                  <label for="img_border_color_blue" title="Blue" class="text-sky-500 bg-sky-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Blue</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="flex flex-col items-center gap-4 w-full">
@@ -202,7 +223,7 @@
                 style="stroke-width:1.19405"
                 clip-path="url(#clipPath4)" />
               <path
-                style="fill:none;stroke-linejoin:round;stroke:#ebc767;stroke-opacity:1;stroke-width:0.02;stroke-dasharray:none"
+                :style="&quot;fill:none;stroke-linejoin:round;stroke:&quot; + imgBorderColor + &quot;;stroke-opacity:1;stroke-width:0.02;stroke-dasharray:none&quot;"
                 d="M 1.15625,0.125 A 0.10001,0.10001 0 0 0 1.085938,0.1542969 L 0.15429687,1.0859375 A 0.10001,0.10001 0 0 0 0.125,1.15625 V 3.2753906 A 0.10001,0.10001 0 0 0 0.22460938,3.375 H 2.2753906 A 0.10001,0.10001 0 0 0 2.375,3.2753906 V 0.22460938 A 0.10001,0.10001 0 0 0 2.2753906,0.125 Z"
                 id="path6" />
               <text
@@ -443,6 +464,13 @@
                 border: '#aeb6c6',
               },
             },
+            imgBorderColorSelection: 'gold',
+            imgBorderColorArray: {
+              black: '#000000',
+              gold: '#ebc767',
+              green: '#427634',
+              blue: '#2f6ea0',
+            },
           };
         },
         computed: {
@@ -460,6 +488,9 @@
           },
           swooshColor() {
             return this.swooshColorArray[this.swooshColorSelection];
+          },
+          imgBorderColor() {
+            return this.imgBorderColorArray[this.imgBorderColorSelection];
           },
         },
         methods: {
