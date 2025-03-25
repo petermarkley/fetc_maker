@@ -62,12 +62,16 @@
             <h2 class="text-center font-bold">Colors</h2>
             <div class="flex flex-col gap-1 items-start">
               <div class="flex flex-row gap-1">
-                <input type="radio" id="swoosh_color_red" name="swoosh_color" v-model="swooshColorSelection" value="red"/>
-                <label for="swoosh_color_red">Red</label>
+                <input type="radio" id="swoosh_color_red" name="swoosh_color" v-model="swooshColorSelection" value="red" class="cursor-pointer"/>
+                <label for="swoosh_color_red" class="text-red-500 bg-red-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Red</label>
               </div>
               <div class="flex flex-row gap-1">
-                <input type="radio" id="swoosh_color_blue" name="swoosh_color" v-model="swooshColorSelection" value="blue"/>
-                <label for="swoosh_color_blue">Blue</label>
+                <input type="radio" id="swoosh_color_orange" name="swoosh_color" v-model="swooshColorSelection" value="orange" class="cursor-pointer"/>
+                <label for="swoosh_color_orange" class="text-orange-500 bg-orange-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Orange</label>
+              </div>
+              <div class="flex flex-row gap-1">
+                <input type="radio" id="swoosh_color_blue" name="swoosh_color" v-model="swooshColorSelection" value="blue" class="cursor-pointer"/>
+                <label for="swoosh_color_blue" class="text-sky-500 bg-sky-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Blue</label>
               </div>
             </div>
           </div>
@@ -382,12 +386,17 @@
             textDescription: "Lorem ipsum dolor",
             textHeadingSize: 0.25,
             textDescriptionSize: 0.166667,
-            swooshColorSelection: 'red',
+            swooshColorSelection: 'blue',
             swooshColorArray: {
               red: {
                 dark: '#cd4d4d',
                 light: '#ffb6ae',
                 border: '#ffb4a8',
+              },
+              orange: {
+                dark: '#cf6c22',
+                light: '#ffb66d',
+                border: '#ffc067',
               },
               blue: {
                 dark: '#4d92cd',
