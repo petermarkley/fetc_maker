@@ -139,6 +139,27 @@
               <input type="text" id="text_hashtag_two" v-model="textHashtagTwo" class="border rounded p-2 bg-gray-50 border-gray-400 w-full"/>
             </div>
           </div>
+          <div class="flex flex-col gap-2">
+            <h2 class="text-center font-bold">Badges</h2>
+            <div class="flex flex-row gap-2 items-start flex-wrap">
+              <div class="flex flex-row gap-1">
+                <input type="radio" id="badge_star_fun" name="badge" v-model="badgeSelection" value="star-fun" class="cursor-pointer"/>
+                <label for="badge_star_fun" title="Star Fun" class="cursor-pointer">
+                  <svg viewBox="0 0 56 56" class="block w-6 h-6">
+                    <use href="badges.svg#star-fun"/>
+                  </svg>
+                </label>
+              </div>
+              <div class="flex flex-row gap-1">
+                <input type="radio" id="badge_star_mono_black" name="badge" v-model="badgeSelection" value="star-mono-black" class="cursor-pointer"/>
+                <label for="badge_star_mono_black" title="Star Mono Black" class="cursor-pointer">
+                  <svg viewBox="0 0 56 56" class="block w-6 h-6">
+                    <use href="badges.svg#star-mono-black"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="flex flex-col items-center gap-4 w-full">
           <svg
@@ -301,7 +322,7 @@
                     id="path11"
                     sodipodi:nodetypes="cccccc" />
                 </g>
-                <g id="g8" transform="translate(0.20464316,-0.11435942)">
+                <g v-if="badgeSelection=='star-fun'" transform="translate(0.20464316,-0.11435942)">
                   <circle
                     style="fill:#a4cdaa;fill-opacity:1;stroke:#374733;stroke-width:0.02;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
                     id="path8"
@@ -311,6 +332,31 @@
                   <path
                     sodipodi:type="star"
                     style="fill:#fffe10;fill-opacity:1;stroke:#ff892f;stroke-width:0.02;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    id="path7"
+                    inkscape:flatsided="false"
+                    sodipodi:sides="5"
+                    sodipodi:cx="1.9260533"
+                    sodipodi:cy="2.6001718"
+                    sodipodi:r1="0.24539544"
+                    sodipodi:r2="0.098158173"
+                    sodipodi:arg1="-1.1675148"
+                    sodipodi:arg2="-0.53919627"
+                    inkscape:rounded="0"
+                    inkscape:randomized="0"
+                    d="M 2.022356,2.3744624 2.0102849,2.5497728 2.1704748,2.6220131 2.0000146,2.6647067 1.9808114,2.8393798 1.8875322,2.6904555 1.7154742,2.7261692 1.8282847,2.5914353 1.7411501,2.4388345 1.90415,2.5044886 Z"
+                    inkscape:transform-center-x="0.048151333"
+                    inkscape:transform-center-y="-0.014727066" />
+                </g>
+                <g v-else-if="badgeSelection=='star-mono-black'" transform="translate(0.20464316,-0.11435942)">
+                  <circle
+                    style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.02;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    id="path8"
+                    cx="1.9260533"
+                    cy="2.6001718"
+                    r="0.28138444" />
+                  <path
+                    sodipodi:type="star"
+                    style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.02;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
                     id="path7"
                     inkscape:flatsided="false"
                     sodipodi:sides="5"
@@ -512,6 +558,7 @@
             },
             textHashtagOne: '',
             textHashtagTwo: '',
+            badgeSelection: 'star-fun',
           };
         },
         computed: {

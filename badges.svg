@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="star-fun" viewBox="0 0 56 56">
+      <circle
+        style="fill:#a4cdaa;fill-opacity:1;stroke:#374733;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#fffe10;fill-opacity:1;stroke:#ff892f;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 37.237735,6.2641508 36.099798,23.138053 51.526638,30.068862 35.126961,34.200942 33.302527,51.014476 24.304906,36.69434 7.7505035,40.154867 18.589345,27.172455 10.182596,12.497645 25.878989,18.79421 Z" />
+    </symbol>
+    <symbol id="star-mono-black" viewBox="0 0 56 56">
+      <circle
+        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 37.237735,6.2641508 36.099798,23.138053 51.526638,30.068862 35.126961,34.200942 33.302527,51.014476 24.304906,36.69434 7.7505035,40.154867 18.589345,27.172455 10.182596,12.497645 25.878989,18.79421 Z" />
+    </symbol>
+  </defs>
+</svg>
