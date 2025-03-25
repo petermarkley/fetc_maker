@@ -5,10 +5,10 @@
     <meta name="author" content="Peter Markley"/>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <div id="app">
-      <h1>Flat Earth Trading Card Maker</h1>
-      <div>
+  <body class="bg-gray-200 flex items-center justify-center">
+    <div id="app" class="flex flex-col gap-4">
+      <h1 class="font-bold text-3xl">Flat Earth Trading Card Maker</h1>
+      <div class="bg-white p-4 rounded shadow">
         <div>
           <h2>Image</h2>
           <div>
@@ -47,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="flex flex-col items-center gap-4 w-full">
         <svg
           width="2.5in"
           height="3.5in"
@@ -62,7 +62,8 @@
           xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:svg="http://www.w3.org/2000/svg">
+          xmlns:svg="http://www.w3.org/2000/svg"
+          class="w-full h-auto">
           <defs id="defs1">
             <linearGradient id="linearGradient16" inkscape:collect="always">
               <stop style="stop-color:#8999a3;stop-opacity:1;" offset="0" id="stop16" />
@@ -330,7 +331,7 @@
             </g>-->
           </g>
         </svg>
-        <button @click="downloadSvg();">Download SVG</button>
+        <button @click="downloadSvg();" class="bg-gray-700 text-white font-bold p-4 rounded shadow cursor-pointer">Download SVG</button>
       </div>
     </div>
     <script type="module">
