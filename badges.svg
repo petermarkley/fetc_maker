@@ -20,5 +20,55 @@
         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
         d="M 37.237735,6.2641508 36.099798,23.138053 51.526638,30.068862 35.126961,34.200942 33.302527,51.014476 24.304906,36.69434 7.7505035,40.154867 18.589345,27.172455 10.182596,12.497645 25.878989,18.79421 Z" />
     </symbol>
+    <symbol id="star-mono-red" viewBox="0 0 56 56">
+      <circle
+        style="fill:#f34930;fill-opacity:1;stroke:#f34930;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 37.237735,6.2641508 36.099798,23.138053 51.526638,30.068862 35.126961,34.200942 33.302527,51.014476 24.304906,36.69434 7.7505035,40.154867 18.589345,27.172455 10.182596,12.497645 25.878989,18.79421 Z" />
+    </symbol>
+    <symbol id="star-mono-gold" viewBox="0 0 56 56">
+      <circle
+        style="fill:#efc619;fill-opacity:1;stroke:#f3d830;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 37.237735,6.2641508 36.099798,23.138053 51.526638,30.068862 35.126961,34.200942 33.302527,51.014476 24.304906,36.69434 7.7505035,40.154867 18.589345,27.172455 10.182596,12.497645 25.878989,18.79421 Z" />
+    </symbol>
+    <symbol id="star-mono-blue" viewBox="0 0 56 56">
+      <circle
+        style="fill:#1968ef;fill-opacity:1;stroke:#1968ef;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 37.237735,6.2641508 36.099798,23.138053 51.526638,30.068862 35.126961,34.200942 33.302527,51.014476 24.304906,36.69434 7.7505035,40.154867 18.589345,27.172455 10.182596,12.497645 25.878989,18.79421 Z" />
+    </symbol>
+    <symbol id="heart-mono-red" viewBox="0 0 56 56">
+      <circle
+        style="fill:#f34930;fill-opacity:1;stroke:#f34930;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 9.9197257,21.099666 C 12.686107,10.017082 24.335562,11.492295 28,17.839288 31.664438,11.492295 43.313893,10.017082 46.080275,21.099666 48.846655,32.18225 33.988154,41.095733 28,47.083887 22.011846,41.095733 7.1533444,32.18225 9.9197257,21.099666 Z" />
+    </symbol>
+    <symbol id="heart-mono-blue" viewBox="0 0 56 56">
+      <circle
+        style="fill:#1968ef;fill-opacity:1;stroke:#1968ef;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+        cx="28"
+        cy="28"
+        r="27" />
+      <path
+        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.92186;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+        d="M 9.9197257,21.099666 C 12.686107,10.017082 24.335562,11.492295 28,17.839288 31.664438,11.492295 43.313893,10.017082 46.080275,21.099666 48.846655,32.18225 33.988154,41.095733 28,47.083887 22.011846,41.095733 7.1533444,32.18225 9.9197257,21.099666 Z" />
+    </symbol>
   </defs>
 </svg>
