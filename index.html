@@ -116,6 +116,10 @@
                   <input type="radio" id="img_border_color_blue" name="img_border_color" v-model="imgBorderColorSelection" value="blue" class="cursor-pointer"/>
                   <label for="img_border_color_blue" title="Blue" class="text-sky-500 bg-sky-500 block w-6 h-6 rounded overflow-hidden cursor-pointer">Blue</label>
                 </div>
+                <div class="flex flex-row gap-1">
+                  <input type="radio" id="img_border_color_pink" name="img_border_color" v-model="imgBorderColorSelection" value="pink" class="cursor-pointer"/>
+                  <label for="img_border_color_pink" title="Pink" class="text-pink-400 bg-pink-400 block w-6 h-6 rounded overflow-hidden cursor-pointer">Pink</label>
+                </div>
               </div>
             </div>
             <div class="flex flex-col gap-1 items-start">
@@ -757,6 +761,7 @@
               gold: '#ebc767',
               green: '#427634',
               blue: '#2f6ea0',
+              pink: '#e38cb4',
             },
             backgroundColorSelection: 'silver',
             backgroundColorArray: {
